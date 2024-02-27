@@ -1,0 +1,13 @@
+server:
+  port: 6060
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/soheldb
+    username: root
+    password: codewithsohel
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      show-sql: true
