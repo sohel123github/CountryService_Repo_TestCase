@@ -25,30 +25,35 @@ public class CountryController {
 	@GetMapping
 	public ResponseEntity<List<Country>> getAllCountry() {
 		List<Country> listOfCountry = countryServiceImpl.getAllCountry();
+		System.out.println(listOfCountry);
 		return new ResponseEntity<>(listOfCountry, HttpStatus.OK);
 	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Country> getCountry(@PathVariable int id) {
 		Country country = countryServiceImpl.getCountry(id);
+		System.out.println(country);
 		return new ResponseEntity<>(country, HttpStatus.OK);
 	}
 
 	@PutMapping()
 	public ResponseEntity<Country> updateCountry(@RequestBody Country country) {
 		Country countryDemo = countryServiceImpl.upsert(country);
+		System.out.println(countryDemo);
 		return new ResponseEntity<>(countryDemo, HttpStatus.OK);
 	}
 
 	@PostMapping
 	public ResponseEntity<Country> addCountry(@RequestBody Country country) {
 		Country countryDemo = countryServiceImpl.upsert(country);
+		System.out.println(countryDemo);
 		return new ResponseEntity<>(countryDemo, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteCountry(@PathVariable int id) {
 		String status = countryServiceImpl.delete(id);
+		System.out.println(id);
 		return new ResponseEntity<>(status, HttpStatus.OK);
 	}
 
