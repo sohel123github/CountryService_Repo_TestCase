@@ -1,13 +1,33 @@
 server:
-  port: 6060
+  port: 2020
+ 
+#MySQl -  
+ 
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/soheldb
+#    username: root
+#    password: codewithsohel
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      show-sql: true
+      
+#H2 Database - 
+
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/soheldb
-    username: root
-    password: codewithsohel
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-    properties:
-      show-sql: true
+  h2:
+    console:
+      enabled: true
+      

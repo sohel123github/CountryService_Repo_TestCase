@@ -8,8 +8,11 @@ import static org.mockito.Mockito.when;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,8 +20,9 @@ import com.country.dao.CountryRepository;
 import com.country.entity.Country;
 import com.country.service.CountryServiceImpl;
 
-@SpringBootTest(classes = ServiceTestMockito.class)
-public class ServiceTestMockito {
+@SpringBootTest(classes = ServiceMockitoTest.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class ServiceMockitoTest {
 
 	@Mock
 	CountryRepository countryRepository;

@@ -100,10 +100,10 @@ public class ControllerMockMvcTest {
 
 		when(countryServiceImpl.upsert(country)).thenReturn(country);
 
-		ObjectMapper mapper = new ObjectMapper();
+		ObjectMapper mapper = new ObjectMapper(); // We here use (ObjectMapper) to convert [java object] into [Json format]..
 		String jsonBody = mapper.writeValueAsString(country);
 
-		this.mockMvc.perform(post("/country").content(jsonBody).contentType(MediaType.APPLICATION_JSON))
+		this.mockMvc.perform(post("/country").content(jsonBody).contentType(MediaType.APPLICATION_JSON)) //perform method..
 				.andExpect(status().isCreated()).andDo(print());
 	}
 

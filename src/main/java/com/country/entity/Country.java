@@ -6,12 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -23,10 +21,5 @@ public class Country {
 	private int id;
 
 	private String name;
-
-	@Override
-	public String toString() {
-		return "Country [id=" + id + ", name=" + name + "]";
-	}
 
 }
